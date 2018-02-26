@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Guest Book</title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" type="text/css" href="{% static 'guestbook/style.css' %}">
+</head>
+
+<body>
+    <div class="container theme-showcase" role="main">
+        <div class="jumbotron">
+            <h1>Guest Book</h1>
+            <p class="lead">Please help us to improve our service by telling us about your experience at our hotel</p>
+            <p class="lead">
+                <a class="btn btn-info btn-lg" href="{% url 'sign' %}" role="button">Leave a comment</a>
+            </p>
+        </div>
+        {% for c in comments %}
+        <div class="page-header">
+            <h5>{{ c.name }}</h5>
+            <hr>
+        </div>
+        <div class="well">
+            <p>{{ c.comment }}</p>
+        </div>
+        {% endfor %}
+    </div>
+    <!-- /container -->
+</body>
+
+</html>
