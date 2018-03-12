@@ -20,14 +20,17 @@
     <div class="container theme-showcase" role="main">
         <div class="jumbotron">
             <h1>Guest Book</h1>
-            <p class="lead">Please help us to improve our service by telling us about your experience at our hotel</p>
+
             <p class="lead">
                 <a class="btn btn-info btn-lg" href="{% url 'sign' %}" role="button">Leave a comment</a>
             </p>
         </div>
+        <h4>Please help us to improve our service by telling us about your experience at our hotel</h4>
+        <br>
         {% for c in comments %}
         <div class="page-header">
-            <h5>{{ c.name }}</h5>
+            <p><strong>{{ c.name }}</strong></p>
+            <p><small>{{ c.date | timesince }} ago</small></p>
             <hr>
         </div>
         <div class="well">

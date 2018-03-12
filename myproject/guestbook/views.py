@@ -5,7 +5,7 @@ from .forms import CommentForm
 # Create your views here.
 
 def index(request):
-	comments = Comment.objects.order_by('date')
+	comments = Comment.objects.order_by('-date')
 	context = {'comments': comments}
 	return render(request, 'guestbook/index.html', context)
 

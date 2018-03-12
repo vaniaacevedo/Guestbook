@@ -1,12 +1,20 @@
 body {
   padding-top: 70px;
   padding-bottom: 30px;
-/*  background: url(" ../guestbook/images/sea.jpg") no-repeat;
-*/
+  /*background: url("/static/images/sea.jpg") no-repeat;
+  background-size: cover;*/
+
 }
 
-.jumbotron{
-  background-color: #d3e6ed;
+h4{
+  font-style: italic;
+  color:#777777;
+}
+
+div.jumbotron{
+  background: url("/static/images/hotel.jpg") no-repeat;
+  background-size: cover;
+  color:white;
 }
 
 
